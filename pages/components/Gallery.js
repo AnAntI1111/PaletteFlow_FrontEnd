@@ -7,6 +7,7 @@ export default function Gallery({ scrollY, fadeEnd }) {
 
   return (
     <motion.div
+    className={styles.gallery}
       style={{
         position: 'fixed',
         top: 0,
@@ -21,17 +22,6 @@ export default function Gallery({ scrollY, fadeEnd }) {
         opacity: opacity,
         transition: 'opacity 0.5s ease',
       }}
-    >
-      {/* Grid Container */}
-      <div className={styles.gallery}>
-        <div className={styles.frame60}>
-          <img className={styles.pic60} src="/pic60.png" width={550} />
-        </div>
-        <div className={styles.text60}>
-          <img className={styles.h60} src="/h60.png" width={460} />
-          <img className={styles.p60} src="/p60.png" width={400} />
-        </div>
-      </div>
-    </motion.div>
+    />
   );
 }
