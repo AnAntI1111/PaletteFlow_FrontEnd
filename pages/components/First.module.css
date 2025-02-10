@@ -1,0 +1,182 @@
+@keyframes loading-expand {
+    0% {
+      width: 70%;
+      height: 80%;
+      border: 15px solid black; /* เพิ่มเส้นขอบตรงนี้ */
+      border-radius: 35px;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: transparent;
+    }
+    50% {
+      width: 100%;
+      top: 5%;
+      border: 15px solid black; /* ย้ำเส้นขอบ */
+      border-radius: 35px;
+      background-color: transparent;
+    }
+    100% {
+      width: 100%;
+      height: 100vh;
+      border: 15px solid black; /* ย้ำเส้นขอบ */
+      border-radius: 35px; /* เต็มจอ */
+      top: 0;
+      left: 0%;
+      transform: none;
+      background-color: transparent;
+    }
+  }
+  
+  .first {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white; /* พื้นหลัง */
+    border: 15px solid white;
+    z-index: 999; /* อยู่เหนือ background */
+    animation: loading-expand 2s ease-in-out forwards;
+    overflow: hidden;
+  }
+  
+  @keyframes bg {
+    0% {
+      margin: auto;
+      width: 70%;
+      height: 80%;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    50% {
+      margin: auto;
+      width: 100%;
+      top: 5%;
+    }
+    100% {
+      width: 100%;
+      height: 100vh;
+      margin: auto;
+      top: 0%;
+      left: 0%;
+      transform: none;
+    }
+  }
+  
+  /* Background animations */
+  .background {
+    position: fixed; /* ติดกับจอ */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -10; /* อยู่ด้านล่างสุด */
+    border-radius: 35px; /* เต็มจอ */
+    background-color: white;
+    animation: bg 2s ease-in-out forwards;
+  }
+  
+  
+  .navbarContainer {
+    position: fixed; /* ติดบนสุดของจอ */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000; /* สูงสุด */
+  }
+  
+  
+  .bar1 {
+    position: absolute;
+    width: 200%;
+    height: 35%;
+    background: linear-gradient(90deg, 
+    #605678 0%, #605678 5%, /*5*/
+    #8ABFA3 5%, #8ABFA3 20%, /*15*/
+    #FFBF61 20%,#FFBF61 40%, /*20*/
+    #FFE6A5 40%,#FFE6A5 45%, /*5*/
+    #257180 45%,#257180 60%, /*15*/
+    #F2E5BF 60%,#F2E5BF 65%, /*5*/
+    #9ABF80 65%,#9ABF80 70%, /*5*/
+    #FD8B51 70%,#FD8B51 85%, /*15*/
+    #CB6040 85%,#CB6040 100% );  /*15*/ 
+    filter: blur(70px); /* ทำสีให้ฟุ้ง */
+    animation: move-right 6s ease-in-out infinite; /* เลื่อนไปทางขวา */
+  }
+  
+  .bar2 {
+    position: absolute;
+    width: 200%;
+    height: 35%;
+    background: linear-gradient(90deg, 
+    #605678 0%, #605678 5%, /*5*/
+    #8ABFA3 5%, #8ABFA3 20%, /*15*/
+    #FFBF61 20%,#FFBF61 40%, /*20*/
+    #FFE6A5 40%,#FFE6A5 45%, /*5*/
+    #257180 45%,#257180 60%, /*15*/
+    #F2E5BF 60%,#F2E5BF 65%, /*5*/
+    #9ABF80 65%,#9ABF80 70%, /*5*/
+    #FD8B51 70%,#FD8B51 85%, /*15*/
+    #CB6040 85%,#CB6040 100% );  /*15*/ 
+    filter: blur(80px); /* ทำสีให้ฟุ้ง */
+    animation: move-left 6s ease-in-out infinite; /* เลื่อนไปทางซ้าย */
+  }
+  
+  .bar1 {
+    top: 20%; /* แถวบนใกล้กลางจอ */
+    animation-direction: alternate-reverse;
+  }
+  
+  .bar2 {
+    top: 50%; /* แถวล่างใต้แถวบน */
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes move-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes move-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* เพิ่มความสูงให้เกิดการ scroll */
+    z-index: 800;
+  }
+  
+  .ImgSilde, .Img60, .ImgP{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .ImgSilde {
+    top: 500px; /* ตำแหน่งจากด้านบน */
+    z-index: 0;
+  }
+  
+  .Img60 {
+    top: 640px; /* ระยะห่างจาก ImgSilde */
+    z-index: 15;
+  }
+  
+  .ImgP {
+    top: 700px; /* ปรับระยะห่าง */
+    z-index: 2;
+  }

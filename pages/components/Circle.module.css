@@ -8,3 +8,39 @@
     
   }
   
+  .textContainer {
+    position: absolute; /* สำคัญ */
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 50vh;
+  }
+  
+  .head {
+    position: absolute; /* ต้องใช้ร่วมกับ bottom */
+    top: 0px;
+    width: 100%;
+    font-size: 72px;
+    font-weight: bold;
+  }
+  
+  .text1 {
+    position: absolute; /* ต้องใช้ร่วมกับ bottom */
+    bottom: 110px;
+    width: 100%;
+    font-size: 32px;
+  }
+  
+  .text2 {
+    position: absolute; /* ต้องใช้ร่วมกับ bottom */
+    bottom: 55px;
+    width: 100%;
+    font-size: 32px;
+  }
+  
+  .text3 {
+    position: absolute; /* ต้องใช้ร่วมกับ bottom */
+    bottom: 0px;
+    width: 100%;
+    font-size: 32px;
+  }
