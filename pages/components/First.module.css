@@ -37,7 +37,7 @@
     background-color: white; /* พื้นหลัง */
     border: 15px solid white;
     z-index: 999; /* อยู่เหนือ background */
-    animation: loading-expand 2s ease-in-out forwards;
+    /* animation: loading-expand 2s ease-in-out forwards; */
     overflow: hidden;
   }
   
@@ -76,7 +76,7 @@
     z-index: -10; /* อยู่ด้านล่างสุด */
     border-radius: 35px; /* เต็มจอ */
     background-color: white;
-    animation: bg 2s ease-in-out forwards;
+    /* animation: bg 2s ease-in-out forwards; */
   }
   
   
