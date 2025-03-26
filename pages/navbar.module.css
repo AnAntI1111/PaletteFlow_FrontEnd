@@ -1,0 +1,109 @@
+.navbar {
+    position: fixed; /* ติดจอบนสุด */
+    top: 15px;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* หรือสีที่ต้องการ */
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* สูงกว่า element อื่น */
+    background-image: url('/navbarBG.png');
+    background-size: contain; /* ปรับขนาดรูปให้เต็มพื้นที่ */
+    background-repeat: no-repeat; /* ไม่ให้รูปซ้ำ */
+    background-position: center; /* จัดให้รูปอยู่ตรงกลาง */
+  }
+
+  .first {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    border: 15px solid black;
+    z-index: 999; /* อยู่เหนือ background */
+    overflow: hidden;
+    border-radius: 35px; /* เต็มจอ */
+    transform: none;
+    background-color: transparent;
+  }
+  
+  .border{
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    border: 15px solid black;
+    z-index: 999; /* อยู่เหนือ background */
+    overflow: hidden;
+    transform: none;
+    background-color: transparent;
+  }
+    
+    .navList {
+      display: flex;
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+    }
+    
+    .navItem {
+      margin: 0 30px;
+      justify-content: space-evenly;
+
+    }
+    
+    .navItem a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s ease;
+      padding: 12px 32px;
+    }
+    
+    .navItem :hover {
+      color: black; 
+      background-color: white;
+      border-radius: 50px;
+    }
+    
+  .logo a{
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: black; /* ตั้งค่าสีเริ่มต้นเป็นสีดำ */
+    transition: color 0.2s ease; /* การเปลี่ยนแปลงสี */
+  }
+  
+  .logo{
+    width: auto;
+  }
+  
+  .socialMedia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo, nav items, and social icons */
+    gap: 10px;
+  }
+  
+  .icon {
+    margin: 0 1;
+    font-size: 32px; /* Adjust icon size */
+    color: black;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .icon:hover {
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 100px;
+    background-color: black; /* Change to desired hover color */
+  }

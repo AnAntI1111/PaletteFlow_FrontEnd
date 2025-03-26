@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import Circle from './components/Circle';
 import Gallery from './components/Gallery';
 import First from './components/First';
+import Video from './components/Video';
+import Navbar from './navbar';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -24,11 +26,13 @@ export default function Home() {
       <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></link>
 
       </Head>
-      <div style={{ height: '200vh',  overflow: 'hidden' }}>
-      <First scrollY={scrollY} fadeStart={fadeStart} />
+      <div style={{ height: '350vh',  overflow: 'hidden',  }}>
+        <Navbar />
+        <First scrollY={scrollY} fadeStart={fadeStart} fadeOutStart={400} />
         <Circle scrollY={scrollY} fadeStart={fadeStart} />
-        <Gallery scrollY={scrollY} fadeEnd={fadeEnd} />
-      </div>
+        <Gallery fadeStart={fadeStart} fadeEnd={fadeEnd} /> {/* 🔹 Gallery อยู่บนสุด */}
+        <Video scrollY={scrollY} fadeStart={fadeEnd + 1800} />
+        </div>
     </div>
   );
 }

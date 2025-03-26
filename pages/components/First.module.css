@@ -169,14 +169,19 @@
   .ImgSilde {
     top: 500px; /* ตำแหน่งจากด้านบน */
     z-index: 0;
+    transform: translateX(-50%);
   }
   
   .Img60 {
-    top: 640px; /* ระยะห่างจาก ImgSilde */
+    top: 670px; /* ระยะห่างจาก ImgSilde */
     z-index: 15;
+    left: 31%;
+    transform: translateX(-50%);
   }
   
   .ImgP {
-    top: 700px; /* ปรับระยะห่าง */
+    top: 800px; /* ปรับระยะห่าง */
     z-index: 2;
+    left: 21%;
+    transform: translateX(-50%);
   }

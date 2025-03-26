@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import styles from "./Circle.module.css";
 
 export default function Circle({ scrollY, fadeStart }) {
-    const fadeEnd = 800;
+    const fadeEnd = 500;
     const opacity = scrollY < fadeStart ? 1 : scrollY > fadeEnd ? 0 : 1 - (scrollY - fadeStart) / (fadeEnd - fadeStart);
     const textOpacity = scrollY > 50 ? 1 : 0; // Adjust when the text appears
 
@@ -27,18 +27,15 @@ export default function Circle({ scrollY, fadeStart }) {
           justifyContent: 'center',
           alignItems: 'center',
           color: '#fff',
-          fontSize: scrollY < fadeStart ? '1rem' : '2rem',
           fontWeight: 'bold',
         }}
       >
         <motion.div 
           className={styles.textContainer} 
-          style={{ opacity: textOpacity, transition: 'opacity 0.5s ease-in-out' }}
+          style={{ opacity: textOpacity, transition: 'opacity 0 s ease-in-out' }}
         >
-          <h1 className={styles.head}>ทฤษฎี</h1>
-          <p className={styles.text1}>ค้นพบความสมดุล</p>    
-          <p className={styles.text2}>เติมเต็มงานดีไซน์ของคุณด้วยพาลเลตสีที่ลงตัว</p>
-          <p className={styles.text3}>สร้างความโดดเด่นและเป็นเอกลักษณ์ในทุกชิ้นงานและเปลี่ยนไอเดียของคุณให้เป็นที่น่าจดจำ</p>
+        <img className={styles.theory} src="/theory.png" width={410} />
+        <img className={styles.p} src="/p.png" width={1300} />
         </motion.div>
       </motion.div>
     );

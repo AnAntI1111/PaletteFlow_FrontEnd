@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import styles from "./First.module.css";
 
-export default function First({ scrollY, fadeStart }) {
+export default function First({ scrollY, fadeStart, fadeOutStart }) {
     const isInverted = scrollY >= fadeStart;
+
+    const fadeOut = scrollY >= fadeOutStart; // เริ่มจางหายเมื่อ scrollY มากกว่า fadeOutStart
 
     return (
         <div>
@@ -13,17 +15,39 @@ export default function First({ scrollY, fadeStart }) {
             </div>
 
             {/* Section สำหรับรูป */}
-            <img className={styles.ImgSilde} src="/silde.png" width={30} />
+            <img 
+                className={styles.ImgSilde} 
+                src="/silde.png" 
+                width={40}
+                animate={{ 
+                    opacity: fadeOut ? 0 : 1,
+                    y: fadeOut ? -50 : 0
+                }}
+                transition={{ duration: 0.2 }}
+             />
             
             <motion.img
                 className={styles.Img60}
                 src="/60_30_10.png"
-                width={600}
-                animate={{ filter: isInverted ? "invert(1)" : "invert(0)" }}
-                transition={{ duration: 0.5 }}
+                width={900}
+                animate={{ 
+                    filter: isInverted ? "invert(1)" : "invert(0)", 
+                    opacity: fadeOut ? 0 : 1,
+                    y: fadeOut ? -50 : 0
+                }}
+                transition={{ duration: 0.2 }}
             />
 
-            <img className={styles.ImgP} src="/PaletteFlow.png" width={1000} />
+            <motion.img
+                className={styles.ImgP}
+                src="/PaletteFlow.png"
+                width={1400}
+                animate={{ 
+                    opacity: fadeOut ? 0 : 1,
+                    y: fadeOut ? -50 : 0
+                }}
+                transition={{ duration: 0.2 }}
+            />        
         </div>
     );
 }
