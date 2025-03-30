@@ -12,8 +12,8 @@ export default function Navbar() {
         <nav className={styles.navbar}>
 
           <div className={styles.logo}>
-            <a href="/">
-                PaletteFlow
+            <a href="#">
+                <img src="/PaletteFlow.png" width={190} />
             </a>
           </div>
 
@@ -21,6 +21,7 @@ export default function Navbar() {
             <li className={styles.navItem}>
               <Link href="/">Home</Link>
             </li>
+            <li className={styles.i}>I</li>
             <li className={styles.navItem}>
               <Link href="/about">About us</Link>
             </li>
