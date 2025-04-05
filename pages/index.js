@@ -5,6 +5,7 @@ import Gallery from './components/Gallery';
 import First from './components/First';
 import Video from './components/Video';
 import Navbar from './navbar';
+import ScrollNavigator from './components/ScrollNavigator';
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
@@ -28,10 +29,11 @@ export default function Home() {
       </Head>
       <div style={{ height: '350vh',  overflow: 'hidden',  }}>
         <Navbar />
-        <First scrollY={scrollY} fadeStart={fadeStart} fadeOutStart={400} />
-        <Circle scrollY={scrollY} fadeStart={fadeStart} />
-        <Gallery fadeStart={fadeStart} fadeEnd={fadeEnd} /> {/* 🔹 Gallery อยู่บนสุด */}
-        <Video scrollY={scrollY} fadeStart={fadeEnd + 1800} />
+        {/* <ScrollNavigator /> */}
+        <First id="first" scrollY={scrollY} fadeStart={fadeStart} fadeOutStart={400} />
+        <Circle id="circle" scrollY={scrollY} fadeStart={fadeStart} />
+        <Gallery id="gallery" fadeStart={fadeStart} fadeEnd={fadeEnd} /> {/* 🔹 Gallery อยู่บนสุด */}
+        <Video id="video" scrollY={scrollY} fadeStart={fadeEnd + 1800} />
         </div>
     </div>
   );

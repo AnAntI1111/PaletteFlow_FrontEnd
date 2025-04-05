@@ -10,6 +10,7 @@ export default function First({ scrollY, fadeStart, fadeOutStart }) {
     const fadeOut = scrollY >= fadeOutStart; // เริ่มจางหายเมื่อ scrollY มากกว่า fadeOutStart
 
     return (
+        <section id="first" style={{ height: '100vh' }}>
         <div>
             {/* Background Section */}
             <div className={styles.background}>
@@ -19,28 +20,24 @@ export default function First({ scrollY, fadeStart, fadeOutStart }) {
 
             {/* Section สำหรับรูป */}
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                {/* <img 
-                    className={styles.ImgSilde} 
-                    src="/silde.png" 
-                    width={40}
-                    animate={{ 
-                        opacity: fadeOut ? 0 : 1,
-                        y: fadeOut ? -50 : 0
-                    }}
-                    transition={{ duration: 0.2 }}
-                /> */}
+
+                <div className={styles.iconContainer}>
+                <FontAwesomeIcon icon={faChevronDown} />
 
                 <motion.div
-                className={styles.slide}
-                initial={{ scaleY: 1 }}
-                animate={{ scaleY: [1, 1.5, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                    animate={{ y: [0, 10, 0] }} 
+                    transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
                 >
                     <FontAwesomeIcon icon={faChevronDown} />
-                    <FontAwesomeIcon icon={faChevronDown} />
-                    <FontAwesomeIcon icon={faChevronDown} />
-
                 </motion.div>
+
+                <motion.div
+                    animate={{ y: [0, 10, 0] }} 
+                    transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+                >
+                    <FontAwesomeIcon icon={faChevronDown} />
+                </motion.div>
+                </div>
                 
                 <motion.img
                     className={styles.Img60}
@@ -66,5 +63,6 @@ export default function First({ scrollY, fadeStart, fadeOutStart }) {
                 />
             </div>    
         </div>
+        </section>
     );
 }

@@ -9,6 +9,7 @@ export default function Circle({ scrollY, fadeStart }) {
     const circlePositionY = scrollY < fadeStart ? `calc(120% - ${scrollY}px)` : '50%';
 
     return (
+      <div id="circle" style={{ height: '100vh', position: 'relative' }}>
       <motion.div
         className="circle"
         style={{
@@ -38,5 +39,6 @@ export default function Circle({ scrollY, fadeStart }) {
         <img className={styles.p} src="/p.png" width={1300} />
         </motion.div>
       </motion.div>
+      </div>
     );
 }

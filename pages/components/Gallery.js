@@ -34,7 +34,7 @@ export default function Gallery({ fadeEnd }) {
 
   const Pic60 = useTransform(scrollY, 
     [fadeEnd, fadeEnd + 300, fadeEnd + 600], // 3 ระยะ
-    ["1500px", "180px", "1500px"] // เริ่มจากล่าง -> อยู่ตรงกลาง -> กลับไปล่าง
+    ["1500vh", "180vh", "1500vh"] // เริ่มจากล่าง -> อยู่ตรงกลาง -> กลับไปล่าง
   );
 
   const Pic60Move = useSpring(Pic60, {
@@ -45,7 +45,7 @@ export default function Gallery({ fadeEnd }) {
 
   const P60 = useTransform(scrollY, 
     [fadeEnd, fadeEnd + 300, fadeEnd + 600], // 3 ระยะ
-    ["1000px", "-650px", "1000px"] // วิ่งเข้ามา -> อยู่ตรงกลาง -> วิ่งออกไป
+    ["1000vh", "-650vh", "1000vh"] // วิ่งเข้ามา -> อยู่ตรงกลาง -> วิ่งออกไป
   );
 
   const P60Move = useSpring(P60, {
@@ -59,7 +59,7 @@ export default function Gallery({ fadeEnd }) {
     // pic30 เลื่อนขึ้นมาจากล่างแล้วกลับไปล่าง
     const Pic30 = useTransform(scrollY, 
       [fadeEnd + 600, fadeEnd + 900, fadeEnd + 1200], // เพิ่ม range ให้ scroll ได้มากขึ้น
-      ["1500px", "250px", "1500px"]
+      ["1500vh", "250vh", "1500vh"]
     );
   
     const Pic30Move = useSpring(Pic30, {
@@ -71,7 +71,7 @@ export default function Gallery({ fadeEnd }) {
     // p30 เลื่อนมาจากซ้ายแล้วกลับไปซ้าย
     const P30 = useTransform(scrollY, 
       [fadeEnd + 600, fadeEnd + 900, fadeEnd + 1200], // เพิ่ม range ให้ scroll ได้มากขึ้น
-      ["-1500px", "400px", "-1500px"]
+      ["-1500vh", "400vh", "-1500vh"]
     );
   
     const P30Move = useSpring(P30, {
@@ -85,7 +85,7 @@ export default function Gallery({ fadeEnd }) {
 
     const Pic10 = useTransform(scrollY, 
       [fadeEnd + 1200, fadeEnd + 1500, fadeEnd + 1800], // ลดช่วงให้มาเร็วขึ้น
-      ["1500px", "170px", "1500px"]
+      ["1500vh", "170vh", "1500vh"]
     );
   
     const Pic10Move = useSpring(Pic10, {
@@ -96,7 +96,7 @@ export default function Gallery({ fadeEnd }) {
   
     const P10 = useTransform(scrollY, 
       [fadeEnd + 1200, fadeEnd + 1500, fadeEnd + 1800], // ลดช่วงให้มาเร็วขึ้น
-      ["1500px", "-600px", "1500px"]
+      ["1500vh", "-600vh", "1500vh"]
     );
   
     const P10Move = useSpring(P10, {
@@ -108,6 +108,7 @@ export default function Gallery({ fadeEnd }) {
 
 
   return (
+    <section id="gallery" style={{ height: '100vh' }}>
     <div className={styles.body}>
     <motion.div 
       className={styles.bg}
@@ -208,6 +209,6 @@ export default function Gallery({ fadeEnd }) {
 
     </motion.div>
     </div>
-
+    </section>
   );
 }

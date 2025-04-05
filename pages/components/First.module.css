@@ -1,38 +1,8 @@
-@keyframes loading-expand {
-    0% {
-      width: 70%;
-      height: 80%;
-      border: 15px solid black; /* เพิ่มเส้นขอบตรงนี้ */
-      border-radius: 35px;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: transparent;
-    }
-    50% {
-      width: 100%;
-      top: 5%;
-      border: 15px solid black; /* ย้ำเส้นขอบ */
-      border-radius: 35px;
-      background-color: transparent;
-    }
-    100% {
-      width: 100%;
-      height: 100vh;
-      border: 15px solid black; /* ย้ำเส้นขอบ */
-      border-radius: 35px; /* เต็มจอ */
-      top: 0;
-      left: 0%;
-      transform: none;
-      background-color: transparent;
-    }
-  }
-  
   .first {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     height: 100vh;
     background-color: white; /* พื้นหลัง */
     border: 15px solid white;
@@ -77,17 +47,7 @@
     border-radius: 35px; /* เต็มจอ */
     background-color: white;
     /* animation: bg 2s ease-in-out forwards; */
-  }
-  
-  
-  .navbarContainer {
-    position: fixed; /* ติดบนสุดของจอ */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10000; /* สูงสุด */
-  }
-  
+  }  
   
   .bar1 {
     position: absolute;
@@ -103,7 +63,7 @@
     #9ABF80 65%,#9ABF80 70%, /*5*/
     #FD8B51 70%,#FD8B51 85%, /*15*/
     #CB6040 85%,#CB6040 100% );  /*15*/ 
-    filter: blur(70px); /* ทำสีให้ฟุ้ง */
+    filter: blur(100px); /* ทำสีให้ฟุ้ง */
     animation: move-right 6s ease-in-out infinite; /* เลื่อนไปทางขวา */
   }
   
@@ -121,7 +81,7 @@
     #9ABF80 65%,#9ABF80 70%, /*5*/
     #FD8B51 70%,#FD8B51 85%, /*15*/
     #CB6040 85%,#CB6040 100% );  /*15*/ 
-    filter: blur(80px); /* ทำสีให้ฟุ้ง */
+    filter: blur(100px); /* ทำสีให้ฟุ้ง */
     animation: move-left 6s ease-in-out infinite; /* เลื่อนไปทางซ้าย */
   }
   
@@ -173,20 +133,18 @@
     transform: translateX(-50%);
   }
   
-  .slide {
-    z-index: 10;
+  .iconContainer {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* ปรับระยะห่างระหว่างไอคอน */
-    font-size: 2rem; /* ปรับขนาดไอคอน */
+    font-size: 2.5rem;
+
   }
   
-
   .Img60 {
     top: 670px; /* ระยะห่างจาก ImgSilde */
     z-index: 15;
@@ -202,3 +160,4 @@
     align-items: center;
     transform: translateX(-50%);
   }
+
