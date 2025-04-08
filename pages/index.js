@@ -29,8 +29,8 @@ export default function Home() {
       </Head>
       <div style={{ height: '350vh',  overflow: 'hidden',  }}>
         <Navbar />
-        {/* <ScrollNavigator /> */}
-        <First id="first" scrollY={scrollY} fadeStart={fadeStart} fadeOutStart={400} />
+        <ScrollNavigator scrollY={scrollY} />
+        <First id="first" scrollY={scrollY} fadeStart={fadeStart} fadeOutStart={150} />
         <Circle id="circle" scrollY={scrollY} fadeStart={fadeStart} />
         <Gallery id="gallery" fadeStart={fadeStart} fadeEnd={fadeEnd} /> {/* 🔹 Gallery อยู่บนสุด */}
         <Video id="video" scrollY={scrollY} fadeStart={fadeEnd + 1800} />

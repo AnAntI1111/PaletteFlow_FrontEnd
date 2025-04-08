@@ -1,11 +1,18 @@
-import Link from "next/link"; // ใช้ Link ของ Next.js สำหรับ Navigation
-import styles from "./navbar.module.css"; // ไฟล์ CSS แยก
-import ReactDOM from 'react-dom'
+import Link from "next/link";
+import styles from "./navbar.module.css";
+import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+  
+
   return (
     <div>
         <nav className={styles.navbar}>
@@ -36,12 +43,38 @@ export default function Navbar() {
               <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
             </a>
           </div>
-
         </nav>
+
+        <div className={styles.hamburgerWrapper}>
+          <div className={styles.hamburgerIcon} onClick={toggleMenu}>
+            <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+          </div>
+          {isOpen && (
+          <div className={styles.showMenu}>
+            <div className={styles.menuItem}><a href="#">เครื่องมือ</a></div>
+            <div className={styles.menuItem}><a href="#">เกี่ยวกับเรา</a></div>
+            <div className={styles.contactSection}>
+              <p>ติดต่อเรา</p>
+              <div className={styles.socialMedia}>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faFacebookF} className={styles.icon} />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
+                </a>
+                <a href="/" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+        </div>
+
         <div className={styles.border}>
           <div className={styles.first}>
           </div>
-          </div>
+        </div>
     </div>
   );
 }

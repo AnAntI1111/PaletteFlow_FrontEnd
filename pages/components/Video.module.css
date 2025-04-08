@@ -19,7 +19,7 @@
     position: fixed;
     top: 60%; /* ทำให้จุดหมุนอยู่กลางจอ */
     left: 50%;
-    width: 120vw; /* ขยายให้คลุมทั้งหน้าจอแม้จะหมุน */
+    width: 200vw; /* ขยายให้คลุมทั้งหน้าจอแม้จะหมุน */
     height: 110vh;
     overflow: hidden;
     z-index: -10;
@@ -107,23 +107,17 @@
 
 }
 
-.sSlide{
-    position: absolute;
-    top: 820px;
-    left: 400px;
-
-}
-
 .iconContainer {
   position: absolute;
-  top: 45%;
-  left: 50%;
+  top: 72%;
+  left: 17%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2.5rem;
-
+  font-size: 2rem;
+  z-index: 1000;
+  color: black;
 }
 
 .easy{
@@ -154,4 +148,56 @@
     to {
         transform: rotate(0deg);
     }
+}
+
+.easyS {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  .hVideo {
+    width: 45vh;
+    position: absolute;
+    top: 15vh;
+    left: 10vh;
+  }
+
+  .videoWrapper{
+    width: 50vh;
+  }
+
+  .ytlink {
+    position: absolute;
+    top: 15vh;
+    left: 95vh;
+  }
+
+  .btn {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 85vh;
+  }
+
+  .iconContainer {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 78vh;
+    left: 35vh;
+  }
+
+  .easy{
+    display: none;
+  }
+
+  .easyS {
+    display: block;
+    width: 25vh;
+    position: absolute;
+    top: 65vh;
+    left: 34vh;
+  }
 }

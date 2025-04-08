@@ -1,6 +1,6 @@
 import styles from "./Video.module.css";
 import { motion } from "framer-motion";
-
+import { useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -37,37 +37,30 @@ export default function Video ({ scrollY, fadeStart }) {
 
             <img className={styles.hVideo} src="/hVideo.png" width={950}/>
 
-            <div className={styles.sSlide}>
-            <div className={styles.iconContainer}>
-                <FontAwesomeIcon icon={faChevronDown} />
-
-                <motion.div
-                    animate={{ y: [0, 10, 0] }} 
-                    transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    <FontAwesomeIcon icon={faChevronDown} />
-                </motion.div>
-
-                <motion.div
-                    animate={{ y: [0, 10, 0] }} 
-                    transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    <FontAwesomeIcon icon={faChevronDown} />
-                </motion.div>
-                </div>
-            </div>
-
             <a href="#" target="_blank" rel="noopener noreferrer">
                 <img className={styles.btn} src="/btn.png" width={590} alt="Button" />
             </a>    
 
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <motion.div className={styles.iconContainer}>
+                    {[...Array(3)].map((_, i) => (
+                    <motion.div
+                        key={i}
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        <FontAwesomeIcon icon={faChevronDown} />
+                    </motion.div>
+                    ))}
+            </motion.div>
+
+            <a href="#" target="_blank" className={styles.ytlink} rel="noopener noreferrer">
                 <img className={styles.yt_icon} src="/yt_icon.png" width={80} alt="Button" />
                 <img className={styles.circle} src="/circle.png" width={230} alt="Button" />
-
             </a>    
 
             <img className={styles.easy} src="/easy.png" width={810}/>
+
+            <img className={styles.easyS} src="/easyS.png" />
             
           </div>
           </section>

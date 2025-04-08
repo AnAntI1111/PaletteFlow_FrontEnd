@@ -116,7 +116,7 @@
   .imageContainer {
     position: relative;
     width: 100%;
-    height: 50vh; /* เพิ่มความสูงให้เกิดการ scroll */
+    height: 50vh;
     z-index: 800;
   }
 
@@ -135,19 +135,21 @@
   
   .iconContainer {
     position: absolute;
-    top: 45%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 2.5rem;
+    color: black;
 
   }
   
   .Img60 {
     top: 670px; /* ระยะห่างจาก ImgSilde */
     z-index: 15;
+    width: 900px;
     justify-content: center;
     align-items: center;
     transform: translateX(-50%);
@@ -156,8 +158,33 @@
   .ImgP {
     top: 800px; /* ปรับระยะห่าง */
     z-index: 2;
+    width: 1400px;
     justify-content: center;
     align-items: center;
     transform: translateX(-50%);
   }
 
+
+  /* Mobile styles */
+@media (max-width: 959px) {  
+  .Img60 {
+    transform: rotate(90deg) !important;
+    width: 600px;
+    top: 47vh;
+    left: -4vh;
+  }
+
+  .ImgP {
+    transform: rotate(90deg) !important;
+    width: 900px;
+    top: 45vh;
+    left: -25vh;
+
+  }
+
+  .iconContainer {
+    margin-top: 2rem;
+    top: 70vh;
+    left: 50vh;
+  }
+}

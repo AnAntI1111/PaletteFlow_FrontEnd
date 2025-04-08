@@ -17,10 +17,10 @@ export default function Circle({ scrollY, fadeStart }) {
           top: circlePositionY,
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: scrollY < fadeStart ? 200 : '140%',
-          height: scrollY < fadeStart ? 200 : '140vh',
+          width: scrollY < fadeStart ? 200 : '150%',
+          height: scrollY < fadeStart ? 200 : '150vh',
           borderRadius: scrollY < fadeStart ? '50%' : '1000px 1000px 0 0',
-          background: 'linear-gradient(to top, black 70%, #444 100%)',
+          background: 'linear-gradient(to top, black 65%, #555 100%)',
           opacity: opacity,
           transition: 'all 0.5s ease',
           zIndex: 10,
@@ -37,6 +37,7 @@ export default function Circle({ scrollY, fadeStart }) {
         >
         <img className={styles.theory} src="/theory.png" width={410} />
         <img className={styles.p} src="/p.png" width={1300} />
+        <img className={styles.sp} src="/sp.png" width={500} />
         </motion.div>
       </motion.div>
       </div>

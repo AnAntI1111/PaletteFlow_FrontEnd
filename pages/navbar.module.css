@@ -53,7 +53,7 @@
     }
     
     .navItem {
-      margin: 0 200px;
+      margin: 0 100px;
       justify-content: space-around;
       z-index: 3000;
 
@@ -70,7 +70,7 @@
       color: white;
       font-size: 18px;
       transition: color 0.3s ease;
-      padding: 12px 32px;
+      padding: 16px 32px;
       z-index: 2000;
     }
     
@@ -117,4 +117,117 @@
     color: black;
     background-color: white;
   }
+
+  .hamburgerWrapper {
+    display: none;
+  }
+
+  .small {
+    display: block;
+  }
   
+
+  /* Hide menu icon on desktop */
+  @media (max-width: 1599px) {
+    .hamburgerWrapper {
+      position: fixed;
+      top: 5vh;
+      right: 19px;
+      z-index: 2000;
+      width: 60px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .hamburgerIcon {
+      color: white;
+      font-size: 1.5rem;
+      z-index: 2;
+      cursor: pointer;
+      padding: 2rem;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+      background-color: black;
+    }
+    
+    .hamburgerWrapper {
+      display: block;
+      position: fixed;
+    }
+
+    .small {
+      display: none;
+      position: absolute;
+      z-index: 1;
+    }
+  
+    .navbar {
+      display: none;
+    }
+  
+    .showMenu {
+      display: flex;
+      position: fixed;
+      top: 15vh;
+      right: 0;
+      width: 25vh;
+      background-color: black;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 2rem;
+      border-top-left-radius: 40px;
+      border-bottom-left-radius: 40px;
+      z-index: 1500;
+      animation: slideIn 0.3s ease forwards;
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .menuItem {
+      font-size: 1.2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #444;
+      width: 100%;
+    }
+    
+    .contactSection {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      width: 100%;
+    }
+    
+    .contactSection p {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .contactSection .socialMedia .icon{
+      width: 26px;
+      height: 26px;
+      padding: 10px;
+      color: black;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 15px;
+      cursor: pointer;
+      transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .contactSection .socialMedia .icon:hover{
+      color: white;
+      background-color: black;
+    }
+    
+  }

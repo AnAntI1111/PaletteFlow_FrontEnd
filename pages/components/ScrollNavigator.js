@@ -1,80 +1,141 @@
-// components/ScrollNavigator.js
 import { useEffect, useState } from 'react';
-// import Circle from './components/Circle';
-// import Gallery from './components/Gallery';
-// import First from './components/First';
-// import Video from './components/Video';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const sections = [
-  { id: 'first', label: '1' },
-  { id: 'circle', label: '2' },
-  { id: 'gallery', label: '3' },
-  { id: 'video', label: '4' }
+  { name: 'PaletteFlow', start: 0, end: 99 },
+  { name: 'ทฤษฎี 60:30:10', start: 100, end: 499 },
+  { name: 'สีหลัก 60%', start: 925, end: 1225 },
+  { name: 'สีรอง 30%', start: 1500, end: 1725 },
+  { name: 'สีเน้น 10%', start: 2125, end: 2500 },
+  { name: 'Video', start: 2800, end: 2900 },
 ];
 
-export default function ScrollNavigator() {
-  const [active, setActive] = useState('');
+export default function ScrollNavigator({ scrollY }) {
+  const [currentSection, setCurrentSection] = useState('');
+  const [hoveredSection, setHoveredSection] = useState('');
 
+  // หา section ปัจจุบัน
   useEffect(() => {
-    const onScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
+    const active = sections.find(
+      (section) => scrollY >= section.start && scrollY <= section.end
+    );
+    setCurrentSection(active?.name || '');
+  }, [scrollY]);
 
-      for (let section of sections) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const offsetTop = el.offsetTop;
-          const offsetHeight = el.offsetHeight;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActive(section.id);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', onScroll);
-    onScroll(); // initialize
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const scrollTo = (id) => {
-    console.log('Scrolling to:', id);
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      console.log('Element not found:', id);
+  // scroll ไปยัง section
+  const handleClick = (sectionName) => {
+    const section = sections.find((s) => s.name === sectionName);
+    if (section) {
+      window.scrollTo({
+        top: section.start,
+        behavior: 'smooth',
+      });
     }
   };
-  
+
+  // กดลูกศรขึ้น
+  const scrollToPrev = () => {
+    const index = sections.findIndex((s) => s.name === currentSection);
+    if (index > 0) {
+      handleClick(sections[index - 1].name);
+    }
+  };
+
+  // กดลูกศรลง
+  const scrollToNext = () => {
+    const index = sections.findIndex((s) => s.name === currentSection);
+    if (index < sections.length - 1) {
+      handleClick(sections[index + 1].name);
+    }
+  };
 
   return (
-    <div style={{
-      position: 'fixed',
-      right: '20px',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '12px',
-      zIndex: 1000,
-    }}>
+    <div style={styles.navContainer}>
+      {/* ปุ่มขึ้น */}
+      <div onClick={scrollToPrev} style={styles.arrowButton}>
+      <FontAwesomeIcon icon={faChevronUp} />
+      </div>
+
+      {/* วงกลมเลื่อน scroll */}
       {sections.map((section) => (
-        <button
-          key={section.id}
-          onClick={() => scrollTo(section.id)}
-          style={{
-            width: '16px',
-            height: '16px',
-            borderRadius: '50%',
-            backgroundColor: active === section.id ? '#FF6B6B' : '#ccc',
-            border: 'none',
-            cursor: 'pointer',
-            transition: 'background-color 0.3s',
-          }}
-          aria-label={`Go to ${section.id}`}
-        />
+        <div
+          key={section.name}
+          onClick={() => handleClick(section.name)}
+          onMouseEnter={() => setHoveredSection(section.name)}
+          onMouseLeave={() => setHoveredSection('')}
+          style={styles.navItemWrapper}
+        >
+          <div
+            style={{
+              ...styles.navItem,
+              ...(currentSection === section.name ? styles.activeItem : {}),
+            }}
+          ></div>
+          {hoveredSection === section.name && (
+            <span style={styles.navLabel}>{section.name}</span>
+          )}
+        </div>
       ))}
+
+      {/* ปุ่มลง */}
+      <div onClick={scrollToNext} style={styles.arrowButton}>
+      <FontAwesomeIcon icon={faChevronDown} />
+      </div>
     </div>
   );
 }
+
+const styles = {
+  navContainer: {
+    position: 'fixed',
+    top: '50%',
+    right: '20px',
+    transform: 'translateY(-50%)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '10px',
+    zIndex: 1000,
+  },
+  arrowButton: {
+    margin: '10px 0',
+    fontSize: '1.5rem',
+    color: '#222',
+    // background: '#eee',
+    padding: '5px 10px',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    userSelect: 'none',
+    transition: 'background 0.2s ease',
+  },
+  navItemWrapper: {
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
+  },
+  navItem: {
+    width: '20px',
+    height: '20px',
+    borderRadius: '50%',
+    background: '#ccc',
+    transition: 'all 0.3s ease',
+  },
+  activeItem: {
+    background: '#222',
+    boxShadow: '0 0 0 3px rgba(0, 0, 0, 0.2)',
+  },
+  navLabel: {
+    position: 'absolute',
+    right: '30px',
+    background: '#fff',
+    color: '#333',
+    padding: '5px 10px',
+    borderRadius: '6px',
+    whiteSpace: 'nowrap',
+    opacity: 1,
+    transform: 'translateX(0)',
+    transition: 'opacity 0.3s ease, transform 0.3s ease',
+  },
+};
