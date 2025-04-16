@@ -1,12 +1,15 @@
 import Link from "next/link";
+import { motion } from "framer-motion";
 import styles from "./navbar.module.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-export default function Navbar() {
+export default function Navbar({ scrollY , fadeStart }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const isInverted = scrollY >= fadeStart;
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -44,6 +47,17 @@ export default function Navbar() {
             </a>
           </div>
         </nav>
+
+        <img className={styles.logoM} src="/logo.png" />
+
+        <motion.img
+          className={styles.logoM}
+          src="/logo.png"
+          animate={{
+              filter: isInverted ? "invert(1)" : "invert(0)",
+          }}
+          transition={{ duration: 0.5 }}
+        />
 
         <div className={styles.hamburgerWrapper}>
           <div className={styles.hamburgerIcon} onClick={toggleMenu}>

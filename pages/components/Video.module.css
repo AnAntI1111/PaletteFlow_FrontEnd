@@ -100,24 +100,18 @@
 
 }
 
-.btn{
-    position: absolute;
-    top: 950px;
-    left: 100px;
-
+.btnTool{
+  position: absolute;
+  top: 70vh;
+  left: 5vh;
 }
 
 .iconContainer {
-  position: absolute;
-  top: 72%;
-  left: 17%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-size: 2rem;
   z-index: 1000;
   color: black;
+  text-align: center;
+  margin-bottom: 2vh;
 }
 
 .easy{
@@ -127,34 +121,80 @@
 
 }
 
+.ytlink {
+  position: relative; /* ทำให้เป็นจุดอ้างอิงสำหรับ absolute */
+  display: inline-block; /* หรือ block ถ้าต้องการขนาดเต็ม */
+  width: 230px; /* กำหนดตามขนาดรูปใหญ่สุด */
+  height: 230px;
+  top: -30vh;
+  right: -70vh;
+}
+
 .yt_icon {
-    position: absolute;
-    top: 200px;
-    right: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* ให้ไอคอนอยู่บน */
 }
 
 .circle {
-    position: absolute;
-    top: 115px;
-    right: 325px;
-    animation: spin 13s linear infinite; /* หมุนตลอด */
-    transform-origin: center; /* หมุนรอบจุดศูนย์กลาง */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1; /* วงกลมอยู่ข้างหลัง */
+  animation: spin 13s linear infinite;
+  transform-origin: center;
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(360deg);
-    }
-    to {
-        transform: rotate(0deg);
-    }
+  from {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
+
 
 .easyS {
   display: none;
 }
 
-@media (max-width: 959px) {
+@media (max-width: 1599px){
+  .hVideo {
+    width: 60vh;
+  }
+
+  .videoWrapper{
+    width: 75vh;
+  }
+
+  .ytlink {
+    position: absolute;
+    top: 15vh;
+    right: 5vh;
+  }
+
+  .btn{
+    width: 45vh;
+  }
+
+  .easy{
+    display: none;
+  }
+
+  .easyS {
+    display: block;
+    width: 35vh;
+    position: absolute;
+    top: 75vh;
+    right: 10vh;
+  }
+}
+
+@media (max-width: 800px) {
   .hVideo {
     width: 45vh;
     position: absolute;
@@ -168,26 +208,17 @@
 
   .ytlink {
     position: absolute;
-    top: 15vh;
-    left: 95vh;
+    top: 25vh;
   }
 
-  .btn {
+  .btnTool {
     position: absolute;
     justify-content: center;
     align-items: center;
     text-align: center;
-    top: 85vh;
+    top: 70vh;
   }
 
-  .iconContainer {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    top: 78vh;
-    left: 35vh;
-  }
 
   .easy{
     display: none;

@@ -8,7 +8,7 @@ const sections = [
   { name: 'สีหลัก 60%', start: 925, end: 1225 },
   { name: 'สีรอง 30%', start: 1500, end: 1725 },
   { name: 'สีเน้น 10%', start: 2125, end: 2500 },
-  { name: 'Video', start: 2800, end: 2900 },
+  { name: 'วิธีใช้งานเว็บไซต์', start: 2800, end: 2900 },
 ];
 
 export default function ScrollNavigator({ scrollY }) {
@@ -101,8 +101,7 @@ const styles = {
   arrowButton: {
     margin: '10px 0',
     fontSize: '1.5rem',
-    color: '#222',
-    // background: '#eee',
+    color: '#ccc',
     padding: '5px 10px',
     borderRadius: '6px',
     cursor: 'pointer',

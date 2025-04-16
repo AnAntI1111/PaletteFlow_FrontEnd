@@ -126,9 +126,21 @@
     display: block;
   }
   
+  .logoM {
+    display: none;
+  }
+  
 
   /* Hide menu icon on desktop */
   @media (max-width: 1599px) {
+    .logoM {
+      display: flex;
+      position: fixed;
+      width: 17vh;
+      margin: 5vh;
+      z-index: 1000;
+    }
+
     .hamburgerWrapper {
       position: fixed;
       top: 5vh;

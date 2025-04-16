@@ -1,6 +1,4 @@
-.body{
-  min-height: 300vh;
-}
+
 
 /* 🔹 พื้นหลังอยู่กับที่ตลอด */
 .bg {
@@ -14,31 +12,77 @@
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
-  opacity: opacity,
-  transition calc(opacity 0.5s ease) ;
+  opacity: opacity;
+  transition: calc(opacity 0.5s ease) ;
   overflow: hidden;
 }
 
-
-/* .light{
-  z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 350px;
+.desktop {
+  display: block !important;  /* !!!!!!!!!! */
 }
 
-.pic60 {
-  z-index: 0;
-  position: absolute;
-  top: 270px;
-  left: 770px;
-  transform: translateX(-50%);
+.mobile {
+  display: none !important; 
 }
 
-.p60 {
-  position: absolute;
-  right: 500px;
-  top: 50%;
-  transform: translateY(-50%);
-} */
+.SmallDesktop {
+  display: none !important;
+}
 
+.tablet {
+  display: none !important;
+}
+
+@media (max-width: 1900px) {
+  .SmallDesktop {
+    display: block !important;  /* !!!!!!!!!! */
+  }
+
+  .mobile {
+    display: none !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  .tablet {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1500px) {
+  .tablet {
+    display: block !important;  /* !!!!!!!!!! */
+  }
+
+  .mobile {
+    display: none !important;
+  }
+
+  .desktop {
+    display: none !important;
+  }
+
+  .SmallDesktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .SmallDesktop {
+    display: none !important;
+  }
+
+  .mobile {
+    display: block !important;  /* !!!!!!!!!! */
+  }
+
+  .tablet {
+    display: none !important;
+  }
+}
