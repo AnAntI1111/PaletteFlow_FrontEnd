@@ -132,7 +132,7 @@
   
 
   /* Hide menu icon on desktop */
-  @media (max-width: 1599px) {
+  @media (max-width: 1500px) {
     .logoM {
       display: flex;
       position: fixed;
