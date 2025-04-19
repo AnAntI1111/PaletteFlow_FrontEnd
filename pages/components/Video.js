@@ -26,8 +26,8 @@ export default function Video ({ scrollY, fadeStart }) {
                 <iframe 
                     width="1903px" 
                     height="750px" 
-                    src="https://www.youtube.com/embed/8eC2c-3iCL8?list=PLxpCY4RrF1TdMrQgCNkbS9aEqmkTOz11I" 
-                    title="La Moon - ละมุน (Blooming Heart) l Official MV" 
+                    src="https://www.youtube.com/embed/G6HuSLwJc74" 
+                    title="PaletteFlow" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     referrerpolicy="strict-origin-when-cross-origin" 
@@ -56,7 +56,7 @@ export default function Video ({ scrollY, fadeStart }) {
             </div>
 
 
-            <a href="#" target="_blank" className={styles.ytlink} rel="noopener noreferrer">
+            <a href="https://youtu.be/G6HuSLwJc74?si=MqlE3fLZiHN7FgcM" target="_blank" className={styles.ytlink} rel="noopener noreferrer">
                 <img className={styles.yt_icon} src="/yt_icon.png" width={80} alt="Button" />
                 <img className={styles.circle} src="/circle.png" width={230} alt="Button" />
             </a>    

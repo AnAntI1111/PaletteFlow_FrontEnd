@@ -5,6 +5,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import EmailCopyIcon from './components/Emailbtn';
+
 
 export default function Navbar({ scrollY , fadeStart }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,14 +38,12 @@ export default function Navbar({ scrollY , fadeStart }) {
           </ul>
 
           <div className={styles.socialMedia}>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <EmailCopyIcon />
+            <a href="https://www.facebook.com/profile.php?id=61575528447895" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faFacebookF} className={styles.icon} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/paletteflow.web/" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
-            </a>
-            <a href="/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
             </a>
           </div>
         </nav>
@@ -70,14 +70,13 @@ export default function Navbar({ scrollY , fadeStart }) {
             <div className={styles.contactSection}>
               <p>ติดต่อเรา</p>
               <div className={styles.socialMedia}>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <EmailCopyIcon />
+
+                <a href="https://www.facebook.com/profile.php?id=61575528447895" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faFacebookF} className={styles.icon} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/paletteflow.web/" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faInstagram} className={styles.icon} />
-                </a>
-                <a href="/" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={faEnvelope} className={styles.icon} />
                 </a>
               </div>
             </div>
