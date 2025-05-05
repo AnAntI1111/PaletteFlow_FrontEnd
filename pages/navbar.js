@@ -29,11 +29,11 @@ export default function Navbar({ scrollY , fadeStart }) {
 
           <ul className={styles.navList}>
             <li className={styles.navItem}>
-              <a href="#">เครื่องมือ</a>
+              <a href="https://paletteflowtoolabout.vercel.app/tool">เครื่องมือ</a>
             </li>
             <li className={styles.i}>I</li>
             <li className={styles.navItem}>
-              <a href="#">เกี่ยวกับเรา</a>
+              <a href="https://paletteflowtoolabout.vercel.app/about">เกี่ยวกับเรา</a>
             </li>
           </ul>
 
@@ -65,8 +65,8 @@ export default function Navbar({ scrollY , fadeStart }) {
           </div>
           {isOpen && (
           <div className={styles.showMenu}>
-            <div className={styles.menuItem}><a href="#">เครื่องมือ</a></div>
-            <div className={styles.menuItem}><a href="#">เกี่ยวกับเรา</a></div>
+            <div className={styles.menuItem}><a href="https://paletteflowtoolabout.vercel.app/tool">เครื่องมือ</a></div>
+            <div className={styles.menuItem}><a href="https://paletteflowtoolabout.vercel.app/about">เกี่ยวกับเรา</a></div>
             <div className={styles.contactSection}>
               <p>ติดต่อเรา</p>
               <div className={styles.socialMedia}>
