@@ -232,3 +232,53 @@ display: none;
   left: 34vh;
 }
 }
+
+@media (max-width: 500px) {
+  .hVideo {
+    width: 40vh;
+    position: absolute;
+    top: 18vh;
+    left: 6vh;
+  }
+  
+  .videoWrapper{
+    top: 45vh;
+    width: 45vh;
+  }
+  
+  .ytlink {
+    display: none;
+  }
+  
+  .btnTool {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 72vh;
+    left: 5vh;
+  }
+
+  .iconContainer {
+    font-size: 1.2rem;
+    z-index: 1000;
+    color: black;
+    text-align: center;
+    margin-bottom: 2vh;
+    }
+  
+  
+  .easy{
+    display: none;
+  }
+
+
+  
+  .easyS {
+    display: block;
+    width: 25vh;
+    position: absolute;
+    top: 63vh;
+    left: 23vh;
+  }
+}

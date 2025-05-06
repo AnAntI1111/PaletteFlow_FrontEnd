@@ -798,6 +798,92 @@ export default function Gallery({ fadeEnd }) {
       </div>
 
 
+      <div className={styles.xs}>
+        <motion.div
+            style={{
+              position: "absolute",
+              zIndex: "100",
+              left: "2vh",
+              top: "-10vh",
+            }}
+          >
+          <img src="/light.png" width={390} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: "absolute",
+            transform: "translate(-50%, -50%)",
+            left: "10vh",
+            top: "-15vh",
+            y : Pic60MoveM, 
+          }}
+        >
+          <img src="/pic60.png" width={260} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: "absolute",
+            transform: "translate(-50%, -50%)",
+            left: "70vh",
+            top: "50vh",
+            x : P60MoveM, 
+          }}
+        >
+          <img src="/60M.png" width={260} />
+        </motion.div>
+
+
+
+        <motion.div
+            style={{
+            position: "absolute",
+            transform: "translate(-50%, -50%)",
+            left: "11vh",
+            top: "-15vh",
+            y: Pic30MoveM, // ควบคุมให้เลื่อนขึ้น-ลง
+            }}
+        >
+            <img src="/pic30.png" width={240} />
+        </motion.div>
+        <motion.div
+          style={{
+            position: "absolute",
+            transform: "translate(-50%, -50%)",
+            left: "-37vh",
+            top: "52vh",
+            x: P30MoveM, // ควบคุมให้เลื่อนซ้าย-ขวา
+          }}
+        >
+          <img src="/30M.png" width={250} />
+        </motion.div>
+
+
+      <motion.div
+            style={{
+            position: "absolute",
+            transform: "translate(-50%, -50%)",
+            left: "8vh",
+            top: "15vh",
+            y : Pic10MoveM,
+            }}
+        >
+            <img  src="/pic10.png" width={290} />
+        </motion.div>
+
+        <motion.div
+            style={{
+            position: "absolute",
+            transform: "translate(-50%, -50%)",
+            left: "60vh",
+            top: "50vh",
+            x : P10MoveM,
+            }}
+        >
+            <img src="/10M.png" width={260} />
+        </motion.div>
+      </div>
+
+
     </motion.div>
     </div>
     </section>

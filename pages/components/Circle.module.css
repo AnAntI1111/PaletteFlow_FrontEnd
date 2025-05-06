@@ -40,6 +40,15 @@
     display: none;
   }
 
+  .Img60 {
+    width: 45vh;
+    display: block;
+    position: absolute; 
+    top: 42vh;
+    z-index: 10;
+    filter: invert(1);
+  }
+
   .sp {
     width: 35vh;
     display: block;
@@ -54,7 +63,7 @@
     width: 45vh;
     display: block;
     position: absolute; 
-    top: 40vh;
+    top: 42vh;
     z-index: 10;
     filter: invert(1);
   }
